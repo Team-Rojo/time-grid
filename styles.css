@@ -1,0 +1,265 @@
+/* =========================
+   Estilos generales
+   ========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 1100px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+  background-color: #f3f4f6;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+
+/* =========================
+   Encabezado
+   ========================= */
+
+.page-header {
+  padding: 32px;
+  color: white;
+  text-align: center;
+  background-color: #2563eb;
+}
+
+.page-header h1 {
+  margin: 0 0 8px;
+  font-size: 40px;
+}
+
+.page-header p {
+  margin: 0;
+}
+
+
+/* =========================
+   Contenido principal
+   ========================= */
+
+.main-content {
+  width: min(1400px, 95%);
+  margin: 32px auto;
+}
+
+.activity-form-section,
+.calendar-section {
+  padding: 24px;
+  margin-bottom: 32px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 8%);
+}
+
+.activity-form-section h2,
+.calendar-section h2 {
+  margin-top: 0;
+}
+
+
+/* =========================
+   Formulario
+   ========================= */
+
+.activity-form {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr) auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  font-weight: bold;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: 10px 12px;
+  color: #1f2937;
+  background-color: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: #2563eb;
+  outline: 3px solid rgb(37 99 235 / 20%);
+}
+
+.activity-form button {
+  padding: 11px 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 6px;
+}
+
+.activity-form button:hover {
+  background-color: #1d4ed8;
+}
+
+
+/* =========================
+   Calendario
+   ========================= */
+
+.calendar {
+  min-width: 1000px;
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: 80px repeat(7, minmax(120px, 1fr));
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background-color: #1e3a8a;
+}
+
+.calendar-corner,
+.calendar-day-header {
+  display: flex;
+  min-height: 56px;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgb(255 255 255 / 25%);
+}
+
+.calendar-body {
+  display: grid;
+  grid-template-columns: 80px repeat(7, minmax(120px, 1fr));
+  height: 720px;
+  overflow-y: auto;
+}
+
+
+/* =========================
+   Columna de horas
+   ========================= */
+
+.calendar-time-column {
+  background-color: #f8fafc;
+  border-right: 1px solid #cbd5e1;
+}
+
+.calendar-time {
+  height: 60px;
+  padding: 6px 8px;
+  color: #64748b;
+  font-size: 13px;
+  text-align: right;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+
+/* =========================
+   Columnas de los días
+   ========================= */
+
+.calendar-day-column {
+  position: relative;
+  height: 1440px;
+  border-right: 1px solid #cbd5e1;
+
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 29px,
+    #e2e8f0 30px,
+    transparent 31px,
+    transparent 59px,
+    #cbd5e1 60px
+  );
+}
+
+.calendar-day-column:last-child {
+  border-right: none;
+}
+
+
+/* =========================
+   Actividades
+   ========================= */
+
+.activity-card {
+  position: absolute;
+  right: 4px;
+  left: 4px;
+  z-index: 2;
+  padding: 8px;
+  overflow: hidden;
+  color: #1e3a8a;
+  background-color: #bfdbfe;
+  border-left: 4px solid #2563eb;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 12%);
+}
+
+.activity-card h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+}
+
+.activity-card p {
+  margin: 0;
+  font-size: 12px;
+}
+
+
+/* =========================
+   Posición de los ejemplos
+   ========================= */
+
+/*
+  Estudiar JavaScript:
+  comienza a las 09:00
+  9 horas × 60 píxeles = 540 píxeles
+
+  dura 1 hora y 30 minutos
+  90 minutos = 90 píxeles
+*/
+
+#monday-column .activity-card-example {
+  top: 540px;
+  height: 90px;
+}
+
+/*
+  Reunión del proyecto:
+  comienza a las 17:00
+  17 horas × 60 píxeles = 1020 píxeles
+
+  dura 1 hora
+  60 minutos = 60 píxeles
+*/
+
+#wednesday-column .activity-card-example {
+  top: 1020px;
+  height: 60px;
+}

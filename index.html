@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>TimeGrid</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <header class="page-header">
+      <h1>TimeGrid</h1>
+
+      <p>Organiza tus actividades en una agenda semanal.</p>
+    </header>
+
+    <main class="main-content">
+      <section class="activity-form-section">
+        <h2>Nueva actividad</h2>
+
+        <form id="activity-form" class="activity-form">
+          <div class="form-field">
+            <label for="activity-title">Título</label>
+
+            <input
+              type="text"
+              id="activity-title"
+              name="title"
+              placeholder="Ejemplo: Estudiar JavaScript"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="activity-day">Día</label>
+
+            <select id="activity-day" name="day" required>
+              <option value="">Selecciona un día</option>
+              <option value="monday">Lunes</option>
+              <option value="tuesday">Martes</option>
+              <option value="wednesday">Miércoles</option>
+              <option value="thursday">Jueves</option>
+              <option value="friday">Viernes</option>
+              <option value="saturday">Sábado</option>
+              <option value="sunday">Domingo</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="activity-start-time">Hora de inicio</label>
+
+            <input
+              type="time"
+              id="activity-start-time"
+              name="startTime"
+              step="1800"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="activity-end-time">Hora de finalización</label>
+
+            <input
+              type="time"
+              id="activity-end-time"
+              name="endTime"
+              step="1800"
+              required
+            />
+          </div>
+
+          <button type="submit">Agregar actividad</button>
+        </form>
+      </section>
+
+      <section class="calendar-section">
+        <h2>Agenda semanal</h2>
+
+        <div class="calendar">
+          <div class="calendar-header">
+            <div class="calendar-corner">Hora</div>
+
+            <div class="calendar-day-header">Lunes</div>
+            <div class="calendar-day-header">Martes</div>
+            <div class="calendar-day-header">Miércoles</div>
+            <div class="calendar-day-header">Jueves</div>
+            <div class="calendar-day-header">Viernes</div>
+            <div class="calendar-day-header">Sábado</div>
+            <div class="calendar-day-header">Domingo</div>
+          </div>
+
+          <div class="calendar-body">
+            <div class="calendar-time-column">
+              <div class="calendar-time">00:00</div>
+              <div class="calendar-time">01:00</div>
+              <div class="calendar-time">02:00</div>
+              <div class="calendar-time">03:00</div>
+              <div class="calendar-time">04:00</div>
+              <div class="calendar-time">05:00</div>
+              <div class="calendar-time">06:00</div>
+              <div class="calendar-time">07:00</div>
+              <div class="calendar-time">08:00</div>
+              <div class="calendar-time">09:00</div>
+              <div class="calendar-time">10:00</div>
+              <div class="calendar-time">11:00</div>
+              <div class="calendar-time">12:00</div>
+              <div class="calendar-time">13:00</div>
+              <div class="calendar-time">14:00</div>
+              <div class="calendar-time">15:00</div>
+              <div class="calendar-time">16:00</div>
+              <div class="calendar-time">17:00</div>
+              <div class="calendar-time">18:00</div>
+              <div class="calendar-time">19:00</div>
+              <div class="calendar-time">20:00</div>
+              <div class="calendar-time">21:00</div>
+              <div class="calendar-time">22:00</div>
+              <div class="calendar-time">23:00</div>
+            </div>
+
+            <div
+              id="monday-column"
+              class="calendar-day-column"
+              data-day="monday"
+            >
+              <article class="activity-card activity-card-example">
+                <h3>Estudiar JavaScript</h3>
+                <p>09:00 - 10:30</p>
+              </article>
+            </div>
+
+            <div
+              id="tuesday-column"
+              class="calendar-day-column"
+              data-day="tuesday"
+            ></div>
+
+            <div
+              id="wednesday-column"
+              class="calendar-day-column"
+              data-day="wednesday"
+            >
+              <article class="activity-card activity-card-example">
+                <h3>Reunión del proyecto</h3>
+                <p>17:00 - 18:00</p>
+              </article>
+            </div>
+
+            <div
+              id="thursday-column"
+              class="calendar-day-column"
+              data-day="thursday"
+            ></div>
+
+            <div
+              id="friday-column"
+              class="calendar-day-column"
+              data-day="friday"
+            ></div>
+
+            <div
+              id="saturday-column"
+              class="calendar-day-column"
+              data-day="saturday"
+            ></div>
+
+            <div
+              id="sunday-column"
+              class="calendar-day-column"
+              data-day="sunday"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
