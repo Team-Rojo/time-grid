@@ -32,7 +32,7 @@ function updateDaysDropdownText() {
     .map((checkbox) => checkbox.nextElementSibling.textContent);
 
   if (selectedDays.length === 0) {
-    daysDropdownText.textContent = "Selecciona los días";
+    daysDropdownText.textContent = "Escoge el día";
     return;
   }
 
@@ -116,6 +116,8 @@ function handleActivityFormSubmit(event, activities) {
 
   activityForm.reset();
   updateDaysDropdownText();
+  daysDropdownMenu.classList.remove("is-open");
+  daysDropdownButton.setAttribute("aria-expanded", "false");
 }
 
 document.addEventListener("click", (event) => {
