@@ -12,7 +12,7 @@ La versión inicial busca construir una agenda semanal manual utilizando tecnolo
 - CSS
 - JavaScript Vanilla
 
-La prioridad del proyecto es mantener un código:
+La prioridad del proyecto es mantener un código muy:
 
 - claro;
 - modular;
