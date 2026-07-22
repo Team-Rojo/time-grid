@@ -1,5 +1,6 @@
 import { renderActivity } from "./calendar.js";
 import { validateActivity } from "./validation.js";
+import { saveActivities } from "./storage.js";
 
 const activityForm = document.querySelector("#activity-form");
 
@@ -30,6 +31,7 @@ function handleActivityFormSubmit(event, activities) {
   }
 
   activities.push(newActivity);
+  saveActivities(activities);
   renderActivity(newActivity);
 
   activityForm.reset();

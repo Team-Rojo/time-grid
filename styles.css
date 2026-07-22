@@ -122,6 +122,34 @@ select {
    Calendario
    ========================= */
 
+#load-demo-button {
+  margin-bottom: 16px;
+  padding: 10px 16px;
+  color: #2563eb;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #2563eb;
+  border-radius: 6px;
+}
+
+#load-demo-button:hover {
+  color: white;
+  background-color: #2563eb;
+}
+
+#load-demo-button:focus-visible {
+  outline: 3px solid rgb(37 99 235 / 20%);
+  outline-offset: 2px;
+}
+
+#load-demo-button:disabled {
+  color: #64748b;
+  cursor: not-allowed;
+  background-color: #e2e8f0;
+  border-color: #cbd5e1;
+}
+
 .calendar {
   min-width: 1000px;
   overflow: hidden;

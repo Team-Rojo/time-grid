@@ -1,28 +1,15 @@
 import { renderActivity } from "./calendar.js";
 import { initializeForm } from "./form.js";
+import { loadActivities } from "./storage.js";
+import { demoActivities } from "./demoActivities.js";
 
-const initialActivities = [
-  {
-    id: 1,
-    title: "Estudiar JavaScript",
-    day: "monday",
-    startTime: "09:00",
-    endTime: "10:30",
-  },
-  {
-    id: 2,
-    title: "Reunión del proyecto",
-    day: "wednesday",
-    startTime: "17:00",
-    endTime: "18:00",
-  },
-];
-
-const activities = [...initialActivities];
+const activities = loadActivities() ?? [];
 
 const exampleActivityCards = document.querySelectorAll(
   ".activity-card-example",
 );
+
+const loadDemoButton = document.querySelector("#load-demo-button");
 
 exampleActivityCards.forEach((activityCard) => {
   activityCard.remove();
@@ -30,6 +17,15 @@ exampleActivityCards.forEach((activityCard) => {
 
 activities.forEach((activity) => {
   renderActivity(activity);
+});
+
+loadDemoButton.addEventListener("click", () => {
+  demoActivities.forEach((activity) => {
+    renderActivity(activity);
+  });
+
+  loadDemoButton.disabled = true;
+  loadDemoButton.textContent = "Actividades de ejemplo cargadas";
 });
 
 initializeForm(activities);
