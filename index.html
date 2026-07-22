@@ -41,9 +41,14 @@
             <label>Días</label>
 
             <div class="days-dropdown">
-              <button id="days-dropdown-button">
-                <span id="days-dropdown-text">Selecciona los días</span>
-                <span>⌄</span>
+              <button
+                type="button"
+                id="days-dropdown-button"
+                class="days-dropdown-button"
+                aria-expanded="false"
+              >
+                <span id="days-dropdown-text">Escoge el día</span>
+                <span class="dropdown-arrow"></span>
               </button>
 
               <div id="days-dropdown-menu" class="days-dropdown-menu">
@@ -89,14 +94,14 @@
           <div class="form-field">
             <label for="activity-start-time">Hora de inicio</label>
             <select id="activity-start-time" name="startTime" required>
-              <option value="">Selecciona una hora</option>
+              <option value="">Escoge hora</option>
             </select>
           </div>
 
           <div class="form-field">
             <label for="activity-end-time">Hora de finalización</label>
             <select id="activity-end-time" name="endTime" required>
-              <option value="">Selecciona una hora</option>
+              <option value="">Escoge hora</option>
             </select>
           </div>
 
