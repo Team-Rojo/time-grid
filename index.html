@@ -38,42 +38,71 @@
           </div>
 
           <div class="form-field">
-            <label for="activity-day">Día</label>
+            <label>Días</label>
 
-            <select id="activity-day" name="day" required>
-              <option value="">Selecciona un día</option>
-              <option value="monday">Lunes</option>
-              <option value="tuesday">Martes</option>
-              <option value="wednesday">Miércoles</option>
-              <option value="thursday">Jueves</option>
-              <option value="friday">Viernes</option>
-              <option value="saturday">Sábado</option>
-              <option value="sunday">Domingo</option>
+            <div class="days-dropdown">
+              <button
+                type="button"
+                id="days-dropdown-button"
+                class="days-dropdown-button"
+                aria-expanded="false"
+              >
+                <span id="days-dropdown-text">Escoge el día</span>
+                <span class="dropdown-arrow"></span>
+              </button>
+
+              <div id="days-dropdown-menu" class="days-dropdown-menu">
+                <label class="day-option">
+                  <input type="checkbox" name="days" value="monday" />
+                  <span>Lunes</span>
+                </label>
+
+                <label class="day-option">
+                  <input type="checkbox" name="days" value="tuesday" />
+                  <span>Martes</span>
+                </label>
+
+                <label class="day-option">
+                  <input type="checkbox" name="days" value="wednesday" />
+                  <span>Miércoles</span>
+                </label>
+
+                <label class="day-option">
+                  <input type="checkbox" name="days" value="thursday" />
+                  <span>Jueves</span>
+                </label>
+
+                <label class="day-option">
+                  <input type="checkbox" name="days" value="friday" />
+                  <span>Viernes</span>
+                </label>
+
+                <label class="day-option">
+                  <input type="checkbox" name="days" value="saturday" />
+                  <span>Sábado</span>
+                </label>
+
+                <label class="day-option">
+                  <input type="checkbox" name="days" value="sunday" />
+                  <span>Domingo</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-field">
+            <label for="activity-start-time">Hora de inicio</label>
+            <select id="activity-start-time" name="startTime" required>
+              <option value="">Escoge hora</option>
             </select>
           </div>
 
           <div class="form-field">
-            <label for="activity-start-time">Hora de inicio</label>
-
-            <input
-              type="time"
-              id="activity-start-time"
-              name="startTime"
-              step="1800"
-              required
-            />
-          </div>
-
-          <div class="form-field">
             <label for="activity-end-time">Hora de finalización</label>
-
-            <input
-              type="time"
-              id="activity-end-time"
-              name="endTime"
-              step="1800"
-              required
-            />
+            <select id="activity-end-time" name="endTime" required>
+              <option value="">Escoge hora</option>
+            </select>
           </div>
 
           <button type="submit">Agregar actividad</button>
